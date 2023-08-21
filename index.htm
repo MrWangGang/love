@@ -293,7 +293,7 @@
                     <span id="text-74" contenteditable="true">陈贝贝，我爱你</span><br />
 					<br />
 					<br />
-					<span id="dec"> -- 按“Esc"键有惊喜，或者点击这行字 -----></span>
+					<span id="dec"> -- 电脑端:按“Esc"键有惊喜 </span>
 				</p>				
 			</div>
 		</div>
@@ -309,11 +309,8 @@
 		});
 
 		function simulateEscKey() {
-			var escKeyEvent = new KeyboardEvent("keydown", {
-				key: "Escape",
-				keyCode: 27
-			});
-			document.dispatchEvent(escKeyEvent);
+			var e = new KeyboardEvent('keydown',{'keyCode':27,'which':27});
+			document.dispatchEvent(e);
 		}
 	</script>
 	<div class="mPower"><span id="on" title="点击暂停" style=""></span><span id="off" title="点击播放"  style=""></span></div>
