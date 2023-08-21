@@ -12,6 +12,13 @@
 <html class="ie ie9">
 <![endif]-->
 <!--[if !(IE)]><!-->
+<style>
+	img {
+		max-width: 100%;
+		height: auto;
+		object-fit: contain; /* 或者使用其他适当的值，如 'contain' */
+	}
+</style>
 <html>
 <!--<![endif]-->
 <head>
@@ -286,7 +293,7 @@
                     <span id="text-74" contenteditable="true">陈贝贝，我爱你</span><br />
 					<br />
 					<br />
-					<span> -- 按“Esc"键有惊喜，或者向下滑动有惊喜</span>
+					<span id="dec"> -- 按“Esc"键有惊喜，或者点击这行字 -----></span>
 				</p>				
 			</div>
 		</div>
@@ -296,6 +303,21 @@
 	<script src="jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
 	<script src="all.min.js" ></script>
 	<script src="love.min.js" ></script>
+	<script>
+		document.getElementById("dec").addEventListener("click", function() {
+			simulateEscKey();
+		});
+
+		function simulateEscKey() {
+			var escKeyEvent = new KeyboardEvent("keydown", {
+				key: "Escape",
+				keyCode: 27
+			});
+			document.dispatchEvent(escKeyEvent);
+		}
+	</script>
 	<div class="mPower"><span id="on" title="点击暂停" style=""></span><span id="off" title="点击播放"  style=""></span></div>
+
 </body>
+
 </html>
